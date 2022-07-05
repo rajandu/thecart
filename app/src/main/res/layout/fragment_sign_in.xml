@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignInFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewTheCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/the_cart"
+            android:textColor="@color/colorText"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewChatWithEveryone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/slogan_thecart"
+            android:textSize="15sp"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/montserrat_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTheCart" />
+
+        <ImageView
+            android:id="@+id/imageViewCart"
+            android:layout_width="330dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_illustration_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewChatWithEveryone" />
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="330dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_txt_username"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCart" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="330dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_txt_password"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+
+        <TextView
+            android:id="@+id/textViewForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@string/forgot_your_password"
+            android:textColor="@color/colorText"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.81"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+        <Button
+            android:id="@+id/buttonSignIn"
+            android:layout_width="125dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/sign_in"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_dont_have_account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewForgotPassword"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_dont_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@string/don_t_you_have_an_account_create"
+            android:textColor="@color/colorText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>

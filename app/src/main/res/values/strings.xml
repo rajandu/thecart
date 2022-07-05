@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">thecart</string>
     <string name="comming_soon">Comming soon...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Email-ID</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="don_t_you_have_an_account_create">Don\'t you have an account? <font color="#0000FF">Create</font></string>
+    <string name="sign_in">Sign in</string>
+    <string name="full_name">Full Name</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="email_id">Email Id</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_account">Already Have An Account</string>
+    <string name="the_cart">thecart</string>
+    <string name="slogan_thecart">Selling only the best things online</string>
 </resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignUpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewCircle"
+            android:layout_width="195dp"
+            android:layout_height="195dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/ic_create_account_background_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextUserNameSignup"
+            android:layout_width="325dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/full_name"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/imageViewCircle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bg_txt_username"
+            tools:layout_editor_absoluteY="293dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmailSignup"
+            android:layout_width="325dp"
+            android:layout_height="55dp"
+            app:layout_constraintTop_toBottomOf="@id/editTextUserNameSignup"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/email_id"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bg_txt_email"
+            tools:layout_editor_absoluteY="348dp" />
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPasswordSignup"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmailSignup"
+            android:layout_width="325dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/enter_password"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bg_txt_password"
+            tools:layout_editor_absoluteY="403dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextConfirmPasswordSignup"
+            android:layout_width="325dp"
+            app:layout_constraintTop_toBottomOf="@id/editTextPasswordSignup"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bg_txt_password"
+            tools:layout_editor_absoluteY="458dp" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="125dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/sign_in"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/alredyAccountSignUpView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPasswordSignup"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/alredyAccountSignUpView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@string/already_account"
+            android:textColor="@color/colorText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>
