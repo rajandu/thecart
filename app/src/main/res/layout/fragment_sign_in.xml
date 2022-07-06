@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewChatWithEveryone" />
 
         <EditText
-            android:id="@+id/editTextUsername"
+            android:id="@+id/emailSignIn"
             android:layout_width="330dp"
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
@@ -74,7 +74,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageViewCart" />
 
         <EditText
-            android:id="@+id/editTextPassword"
+            android:id="@+id/passwordSignIn"
             android:layout_width="330dp"
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
@@ -89,7 +89,7 @@
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+            app:layout_constraintTop_toBottomOf="@+id/emailSignIn" />
 
         <TextView
             android:id="@+id/textViewForgotPassword"
@@ -104,7 +104,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.81"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordSignIn" />
 
         <Button
             android:id="@+id/buttonSignIn"
@@ -116,6 +116,7 @@
             android:background="@drawable/rounded_corner"
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/sign_in"
+            android:enabled="false"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -137,6 +138,19 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="skip"
+            android:textColor="#D1AA48"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
