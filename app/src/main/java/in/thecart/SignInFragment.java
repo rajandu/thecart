@@ -36,6 +36,7 @@ public class SignInFragment extends Fragment {
     }
 
     private TextView dontHaveAnAccount;
+    private TextView forgetPassword;
     private FrameLayout parentFrameLayout;
 
     private EditText email;
@@ -62,6 +63,8 @@ public class SignInFragment extends Fragment {
 
         email = view.findViewById(R.id.emailSignIn);
         password = view.findViewById(R.id.passwordSignIn);
+
+        forgetPassword = view.findViewById(R.id.textViewForgotPassword);
 
         signInButton = view.findViewById(R.id.buttonSignIn);
 
@@ -126,8 +129,14 @@ public class SignInFragment extends Fragment {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),MainActivity.class));
-                getActivity().finish();
+               mainIntent();
+            }
+        });
+
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setFragment(new ResetPasswordFragment());
             }
         });
     }
@@ -142,11 +151,7 @@ public class SignInFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-
-                                    Intent mainIntent = new Intent(getActivity(),MainActivity.class);
-                                    startActivity(mainIntent);
-                                    getActivity().finish();
-
+                                    mainIntent();
                                 }else{
 
                                     signInButton.setEnabled(true);
@@ -183,5 +188,11 @@ public class SignInFragment extends Fragment {
         }else{
             signInButton.setEnabled(false);
         }
+    }
+
+    private void mainIntent(){
+        Intent mainIntent = new Intent(getActivity(),MainActivity.class);
+        startActivity(mainIntent);
+        getActivity().finish();
     }
 }

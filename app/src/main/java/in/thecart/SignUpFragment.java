@@ -187,9 +187,7 @@ public class SignUpFragment extends Fragment {
 
                                                     if(task.isSuccessful())
                                                     {
-                                                        Intent mainIntent = new Intent(getActivity(), MainActivity.class);
-                                                        startActivity(mainIntent);
-                                                        getActivity().finish();
+                                                        setFragment(new SignInFragment());
                                                     }else{
                                                         signUpBtn.setEnabled(true);
                                                         String error = task.getException().getMessage();
