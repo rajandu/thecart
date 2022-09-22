@@ -1,6 +1,7 @@
 package in.thecart;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,10 +25,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -177,8 +181,11 @@ public class SignUpFragment extends Fragment {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
 
-                                    Map<Object,String> userdata = new HashMap<>();
-                                    userdata.put("Fullname",fullName.getText().toString());
+                                  final  Map<Object,String> userdata = new HashMap<>();
+                                    userdata.put("name",fullName.getText().toString());
+                                    userdata.put("email",email.getText().toString());
+                                    userdata.put("profile","");
+
                                     firebaseFirestore.collection("USERS")
                                             .add(userdata)
                                             .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
@@ -187,7 +194,60 @@ public class SignUpFragment extends Fragment {
 
                                                     if(task.isSuccessful())
                                                     {
-                                                        setFragment(new SignInFragment());
+                                                        CollectionReference userDataReference=firebaseFirestore.collection("USERS").document(firebaseAuth.getUid()).collection("USER_DATA");
+
+                                                        Map<String,Object> wishlistMap= new HashMap<>();
+                                                        wishlistMap.put("list_size", (long) 0);
+
+                                                        Map<String,Object> ratingsMap= new HashMap<>();
+                                                        ratingsMap.put("list_size", (long) 0);
+
+                                                        Map<String,Object> cartMap= new HashMap<>();
+                                                        cartMap.put("list_size", (long) 0);
+
+                                                        Map<String,Object> myAddressesMap= new HashMap<>();
+                                                        myAddressesMap.put("list_size", (long) 0);
+
+                                                        Map<String,Object> notificationMap= new HashMap<>();
+                                                        notificationMap.put("list_size", (long) 0);
+
+                                                        List<String> documentNames = new ArrayList<>();
+                                                        documentNames.add("MY_WISHLIST");
+                                                        documentNames.add("MY_RATINGS");
+                                                        documentNames.add("MY_CART");
+                                                        documentNames.add("MY_ADDRESSES");
+                                                        documentNames.add("MY_NOTIFICATIONS");
+
+                                                        final List<Map<String,Object>> documentFields = new ArrayList<>();
+                                                        documentFields.add(wishlistMap);
+                                                        documentFields.add(ratingsMap);
+                                                        documentFields.add(cartMap);
+                                                        documentFields.add(myAddressesMap);
+                                                        documentFields.add(notificationMap);
+
+                                                        for (int x=0; x<documentNames.size() ;x++){
+                                                            final int finalX = x;
+                                                            userDataReference.document(documentNames.get(x))
+                                                                    .set(documentFields.get(x))
+                                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                        @Override
+                                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                                            if(task.isSuccessful()){
+                                                                                if(finalX == documentFields.size()-1) {
+
+                                                                                    startActivity(new Intent(getActivity(), MainActivity.class));
+                                                                                    getActivity().finish();
+                                                                                }
+                                                                            }else {
+                                                                                signUpBtn.setEnabled(true);
+                                                                                signUpBtn.setTextColor(Color.rgb(255,255,255));
+                                                                                String error=task.getException().getMessage();
+                                                                                Toast.makeText(getActivity(), error,Toast.LENGTH_SHORT).show();
+                                                                            }
+                                                                        }
+                                                                    });
+                                                        }
+                                                        //setFragment(new SignInFragment());
                                                     }else{
                                                         signUpBtn.setEnabled(true);
                                                         String error = task.getException().getMessage();

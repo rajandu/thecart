@@ -3,11 +3,10 @@
 
     <item>
         <shape>
-            <solid android:color="@color/random"></solid>
+            <solid android:color="@color/random"/>
         </shape>
     </item>
-
-   <item>
-       <bitmap android:src="@mipmap/logo" android:gravity="center"></bitmap>
-   </item>
+    <item>
+        <bitmap android:src="@mipmap/images" android:gravity="center"/>
+    </item>
 </layer-list>
