@@ -21,6 +21,14 @@
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Thecart.NoActionBar" />
         <activity
+            android:name=".NotificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Thecart.NoActionBar" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Thecart.NoActionBar" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity

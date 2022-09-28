@@ -11,10 +11,10 @@ public class WishlistModel {
     private String productImage,productId;
     private String productTitle,rating,productPrice,cuttedPrice;
     private Boolean COD;
-    private boolean inStock;
+    private Boolean inStock;
     private ArrayList<String>tags;
 
-    public WishlistModel(String productId,String productImage, String productTitle,long freeCoupans, String rating, long totalRatings, String productPrice, String cuttedPrice, Boolean COD,boolean inStock) {
+    public WishlistModel(String productId,String productImage, String productTitle,long freeCoupans, String rating, long totalRatings, String productPrice, String cuttedPrice, Boolean COD,Boolean inStock) {
         this.productId=productId;
         this.freeCoupans = freeCoupans;
         this.totalRatings = totalRatings;

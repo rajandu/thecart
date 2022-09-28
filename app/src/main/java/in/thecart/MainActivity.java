@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
         actionbarLogo=findViewById(R.id.app_bar_logo);
@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
                                     fullname.setText(DBquerries.fullname);
                                     email.setText(DBquerries.email);
-                                    if (DBquerries.profile.equals("")) {
+                                    if (DBquerries.profile!=null && DBquerries.profile.equals("")) {
                                         addProfileIcon.setVisibility(View.VISIBLE);
                                     } else {
                                         addProfileIcon.setVisibility(View.INVISIBLE);

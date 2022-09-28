@@ -211,7 +211,7 @@ public class MyAccountFragment extends Fragment {
 
         name.setText(DBquerries.fullname);
         email.setText(DBquerries.email);
-        if(!DBquerries.profile.equals("")){
+        if(DBquerries.profile!=null && DBquerries.profile.equals("")){
             Glide.with(getContext()).load(DBquerries.profile).apply(new RequestOptions().placeholder(R.mipmap.user_blue)).into(profileView);
         }else {
             profileView.setImageResource(R.mipmap.user_blue);
