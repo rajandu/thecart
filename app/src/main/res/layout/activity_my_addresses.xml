@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:background="@color/colorAccent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyAddressesActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout5"
+        android:id="@+id/appBarLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
@@ -23,6 +24,7 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
@@ -30,24 +32,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:elevation="4dp"
+        android:elevation="5dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout6">
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableStart="@mipmap/plus"
+            android:drawableStart="@drawable/add"
             android:drawablePadding="8dp"
             android:drawableTint="@color/random"
             android:padding="16dp"
             android:text="Add a new address"
             android:textColor="@color/random"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
     <TextView
@@ -57,36 +59,35 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="2 addresses saved"
-        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_new_address_btn" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/address_recyclerview"
+        android:id="@+id/addresses_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/deliver_here_btn"
+        app:layout_constraintBottom_toTopOf="@+id/deliver_here_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_saved" />
 
     <Button
-        android:id="@+id/deliver_here_btn"
+        android:id="@+id/deliver_here_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/slider_background"
+        android:backgroundTint="@color/random"
+        android:elevation="6dp"
+        android:stateListAnimator="@null"
         android:text="Deliver here"
         android:textAllCaps="false"
-        android:textStyle="bold"
         android:textColor="@color/colorAccent"
-        android:background="@color/random"
         android:textSize="16sp"
-        android:stateListAnimator="@null"
-        android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

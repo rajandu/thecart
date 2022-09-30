@@ -1,8 +1,10 @@
 package in.thecart;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,40 +23,45 @@ import java.util.List;
  */
 public class MyOrderFragment extends Fragment {
 
-
     public MyOrderFragment() {
-        // Required empty public constructor
     }
 
-    private RecyclerView myOrdersRecyclerView;
+    private Dialog loadingDialog;
+    public static MyOrderAdapter myOrderAdapter;
+    private RecyclerView myordersRecyclerView;
+
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View root = inflater.inflate(R.layout.fragment_my_orders, container, false);
+        myordersRecyclerView=root.findViewById(R.id.my_orders_recyclerview);
+
+        //////////loading dialog
+
+        loadingDialog = new Dialog(getContext());
+        loadingDialog.setContentView(R.layout.loading_progress_dialog);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawable(getContext().getDrawable(R.drawable.slider_background));
+        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadingDialog.show();
+
+        //////////loading dialog
+
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        myordersRecyclerView.setLayoutManager(linearLayoutManager);
+
+
+        myOrderAdapter=new MyOrderAdapter(DBqueries.myOrderItemModelList,loadingDialog);
+        myordersRecyclerView.setAdapter(myOrderAdapter);
+
+
+        DBqueries.loadOrders(getContext(),myOrderAdapter,loadingDialog);
+        return root;
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_my_order, container, false);
-
-        myOrdersRecyclerView = view.findViewById(R.id.my_orders_recyclerview);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        myOrdersRecyclerView.setLayoutManager(layoutManager);
-
-        List<MyOrderItemModel> myOrderItemModelList = new ArrayList<>();
-        myOrderItemModelList.add(new MyOrderItemModel(R.drawable.product_image,2,"Pixel 2 XL(Black)"
-        ,"Delivered on Mon 15th Jan 2020"));
-        myOrderItemModelList.add(new MyOrderItemModel(R.drawable.image2,1,"Pixel 2 XL(Black)"
-                ,"Delivered on Mon 15th Jan 2020"));
-        myOrderItemModelList.add(new MyOrderItemModel(R.drawable.product_image,0,"Pixel 2 XL(Black)"
-                ,"Cancelled"));
-        myOrderItemModelList.add(new MyOrderItemModel(R.drawable.image2,4,"Pixel 2 XL(Black)"
-                ,"Delivered on Mon 15th Jan 2020"));
-
-        MyOrderAdapter myOrderAdapter = new MyOrderAdapter(myOrderItemModelList);
-        myOrdersRecyclerView.setAdapter(myOrderAdapter);
+    public void onStart() {
+        super.onStart();
         myOrderAdapter.notifyDataSetChanged();
-
-
-        return view;
     }
-
 }

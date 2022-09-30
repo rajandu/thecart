@@ -8,12 +8,14 @@
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1995" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable-v24/profile_pic.xml" value="0.1835" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/account.xml" value="0.1465" />
+        <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/add.xml" value="0.1" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/badge_count.xml" value="0.1" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/ic__asset_2.xml" value="0.1995" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1835" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/ic_create_account_background_top.xml" value="0.1375" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/ic_forgot_password_bro.xml" value="0.1995" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1995" />
+        <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/menu.xml" value="0.1" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/profile_pic.xml" value="0.165" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/selected_dot.xml" value="0.1" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/drawable/slider_background.xml" value="0.2075" />
@@ -23,6 +25,7 @@
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/layout/activity_delivery.xml" value="0.11372381359555365" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/layout/activity_main.xml" value="0.136" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/layout/activity_my_addresses.xml" value="0.13210773834972211" />
+        <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/layout/activity_notification.xml" value="0.10029251984956122" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/layout/activity_order_details.xml" value="0.11372381359555365" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/layout/activity_otpverification.xml" value="0.11372381359555365" />
         <entry key="..\:/File/Cluster Inovation Centre/Sem 5/Mini Project/thecart/app/src/main/res/layout/activity_product_details.xml" value="0.11372381359555365" />

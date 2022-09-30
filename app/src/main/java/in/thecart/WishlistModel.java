@@ -1,25 +1,67 @@
 package in.thecart;
 
+import java.util.ArrayList;
+
 public class WishlistModel {
 
-    private String productImage;
-    private String productTitle;
-    private long freeCoupons;
-    private String rating;
-    private long totalRatings;
-    private String productPrice;
-    private String cuttedPrice;
-    private boolean COD;
+    private long freeCoupans,totalRatings;
+    private String productImage,productId;
+    private String productTitle,rating,productPrice,cuttedPrice;
+    private Boolean COD;
+    private boolean inStock;
+    private ArrayList<String> tags;
 
-    public WishlistModel(String productImage, String productTitle, long freeCoupons, String rating, long totalRatings, String productPrice, String cuttedPrice, boolean COD) {
+    public WishlistModel(String productId,String productImage, String productTitle,long freeCoupans, String rating, long totalRatings, String productPrice, String cuttedPrice, Boolean COD,boolean inStock) {
+        this.productId=productId;
+        this.freeCoupans = freeCoupans;
+        this.totalRatings = totalRatings;
         this.productImage = productImage;
         this.productTitle = productTitle;
-        this.freeCoupons = freeCoupons;
         this.rating = rating;
-        this.totalRatings = totalRatings;
         this.productPrice = productPrice;
         this.cuttedPrice = cuttedPrice;
         this.COD = COD;
+        this.inStock=inStock;
+    }
+
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
+
+    public boolean isInStock() {
+        return inStock;
+    }
+
+    public void setInStock(boolean inStock) {
+        this.inStock = inStock;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public long getFreeCoupans() {
+        return freeCoupans;
+    }
+
+    public void setFreeCoupans(long freeCoupans) {
+        this.freeCoupans = freeCoupans;
+    }
+
+    public long getTotalRatings() {
+        return totalRatings;
+    }
+
+    public void setTotalRatings(long totalRatings) {
+        this.totalRatings = totalRatings;
     }
 
     public String getProductImage() {
@@ -38,28 +80,12 @@ public class WishlistModel {
         this.productTitle = productTitle;
     }
 
-    public long getFreeCoupons() {
-        return freeCoupons;
-    }
-
-    public void setFreeCoupons(long freeCoupons) {
-        this.freeCoupons = freeCoupons;
-    }
-
     public String getRating() {
         return rating;
     }
 
     public void setRating(String rating) {
         this.rating = rating;
-    }
-
-    public long getTotalRatings() {
-        return totalRatings;
-    }
-
-    public void setTotalRatings(long totalRatings) {
-        this.totalRatings = totalRatings;
     }
 
     public String getProductPrice() {
@@ -78,11 +104,11 @@ public class WishlistModel {
         this.cuttedPrice = cuttedPrice;
     }
 
-    public boolean isCOD() {
+    public Boolean getCOD() {
         return COD;
     }
 
-    public void setCOD(boolean COD) {
+    public void setCOD(Boolean COD) {
         this.COD = COD;
     }
 }
