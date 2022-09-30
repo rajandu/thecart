@@ -9,4 +9,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorText">#504F60</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="successGreen">#11A10C</color>
 </resources>
